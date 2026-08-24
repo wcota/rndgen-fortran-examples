@@ -37,6 +37,9 @@ for compiler in "${COMPILERS[@]}"; do
             # Check fpm's exit code to report success or failure
             if [ $? -eq 0 ]; then
                 echo -e "[\033[32mOK\033[0m]"
+
+                # clear the output file to remove the fpm compilation success message
+                sed -i '1,/\[100%\] Project compiled successfully/d' "$output_file"
             else
                 echo -e "[\033[31mFAILED\033[0m] (see $output_file)"
             fi
