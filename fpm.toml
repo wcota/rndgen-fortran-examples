@@ -1,0 +1,15 @@
+name = "rndgen-fortran-examples"
+version = "2.0.0"
+license = "LGPL-3.0-or-later"
+author = "Wesley Cota"
+maintainer = "wlcota@gmail.com"
+copyright = "Copyright 2026, Wesley Cota"
+
+[fortran]
+implicit-typing = false
+implicit-external = false
+source-form = "free"
+
+[dev-dependencies]
+julienne = {git = "https://github.com/berkeleylab/julienne", tag = "4.1.1"}
+rndgen-fortran = {git="https://github.com/wcota/rndgen-fortran", tag="v2"}

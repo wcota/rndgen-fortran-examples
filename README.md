@@ -1,0 +1,153 @@
+# rndgen-fortran-examples
+
+Examples and tests for the [`rndgen-fortran`](https://github.com/wcota/rndgen-fortran) library, which implements multiple pseudo-random number generators (PRNGs) as Fortran objects. This repository provides comprehensive examples, benchmarks, and statistical tests comparing the available generators.
+
+## Generators
+
+### xoshiro256\*\* (recommended for general use)
+
+**xoshiro256\*\*** (XOR/shift/rotate, 256 bits) by David Blackman and Sebastiano Vigna is the primary recommended generator. The original C implementation is available at <https://prng.di.unimi.it/xoshiro256starstar.c> and is dedicated to the **public domain** worldwide (Creative Commons CC0). The Fortran implementation in this library is adapted from [`fortran-lang/stdlib`](https://github.com/fortran-lang/stdlib).
+
+Key properties:
+
+- **256-bit state**, period $2^{256} − 1$
+- Excellent sub-nanosecond speed
+- Passes all known statistical tests (BigCrush, PractRand)
+- 4-dimensionally equidistributed
+- Provides jump functions (equivalent to $2^{128}$ and $2^{192}$ calls) for non-overlapping parallel streams
+- State seeded via SplitMix64 from a single integer seed
+- Adopted as default PRNG by GNU Fortran, .NET, Lua, and others
+
+More information: <https://prng.di.unimi.it/>
+
+### KISS (Keep It Simple Stupid)
+
+**KISS05** is a classical 32-bit generator combining three sub-generators:
+
+The KISS implementation is adapted from [Thomas Vojta](http://thomasvojta.com/)'s code at <http://web.mst.edu/~vojtat/class_5403/kiss05/rkiss05.f90>:
+
+```txt
+! Random number generator KISS05 after a suggestion by George Marsaglia
+! in "Random numbers for C: The END?" posted on sci.crypt.random-numbers
+! in 1999
+!
+! version as in "double precision RNGs" in  sci.math.num-analysis
+! http://sci.tech-archive.net/Archive/sci.math.num-analysis/2005-11/msg00352.html
+!
+! The  KISS (Keep It Simple Stupid) random number generator. Combines:
+! (1) The congruential generator x(n)=69069*x(n-1)+1327217885, period 2^32.
+! (2) A 3-shift shift-register generator, period 2^32-1,
+! (3) Two 16-bit multiply-with-carry generators, period 597273182964842497>2^59
+! Overall period > 2^123
+!
+!
+! A call to rkiss05() gives one random real in the interval [0,1),
+! i.e., 0 <= rkiss05 < 1
+!
+! Before using rkiss05 call kissinit(seed) to initialize
+! the generator by random integers produced by Park/Millers
+! minimal standard LCG.
+! Seed should be any positive integer.
+!
+! FORTRAN implementation by Thomas Vojta, vojta@mst.edu
+! built on a module found at www.fortran.com
+!
+!
+! History:
+!        v0.9     Dec 11, 2010    first implementation
+!        V0.91    Dec 11, 2010    inlined internal function for the SR component
+!        v0.92    Dec 13, 2010    extra shuffle of seed in kissinit
+!        v093     Aug 13, 2012    changed inter representation test to avoid data statements
+```
+
+## Benchmark Results
+
+Tests were run generating 500,000,000 double-precision values (array fill), comparing KISS, xoshiro256\*\*, the Fortran intrinsic `random_number`, and the Numerical Recipes ran2 generator.
+
+### Benchmark Environment
+
+| Property | Value |
+|---|---|
+| CPU | 12th Gen Intel Core i7-1260P |
+| OS | Arch Linux (x86\_64) |
+| Compiler | GNU Fortran (GCC) 16.2.1 (2026-08-10) |
+
+
+### Performance (500 M doubles)
+
+| Generator | Time (s) | Throughput (M/s) |
+|---|---|---|
+| **xoshiro256\*\*** | **5.56** | **~90 M** |
+| Fortran Intrinsic | 6.45 | ~78 M |
+| KISS | 8.04 | ~62 M |
+| ran2 | 10.36 | ~48 M |
+
+### Statistical Quality
+
+| Test | KISS | xoshiro256\*\* | Intrinsic | ran2 |
+|---|---|---|---|---|
+| Mean ≈ 0.5 | ✓ | ✓ | ✓ | ✓ |
+| Variance ≈ 1/12 | ✓ | ✓ | ✓ | ✓ |
+| Lag-1 autocorrelation ≈ 0 | ✓ | ✓ | ✓ | ✓ |
+| Bit balance (monobit) | ✗ bias | **✓** | ✗ bias | ✗ bias |
+| Native bit width | 32-bit | **64-bit** | 64-bit | 64-bit |
+
+**xoshiro256\*\*** is the fastest generator and the only one to pass the raw bit balance test, making it the recommended choice for general-purpose scientific simulations.
+
+## Usage
+
+Add the library as a dependency using the [Fortran Package Manager](https://fpm.fortran-lang.org/) (fpm):
+
+```toml
+[dependencies]
+rndgen-fortran = {git = "https://github.com/wcota/rndgen-fortran", tag = "v2"}
+```
+
+```fortran
+use rndgen_mod
+implicit none
+
+! Use xoshiro256** (default)
+type(rndgen_t) :: rng
+
+call rng%init(iseed = 42)
+
+print *, rng%rnd()          ! real in [0, 1)
+print *, rng%int(1, 100)    ! integer in [1, 100]
+print *, rng%real(-1.0d0, 1.0d0)  ! real in [-1, 1)
+```
+
+To use KISS instead, use `rndgen_kiss_t` instead of `rndgen_t`. Both types share the same interface via the `rndgen_base_t` abstract base class.
+
+## Running Examples
+
+```bash
+fpm run --example simple
+fpm run --example arrays
+fpm run --example vojta
+fpm run --example save
+fpm run --example 2gen -- 12345 67890
+fpm run --example 2gen-invert -- 12345 67890
+fpm run --example PL
+fpm run --example PL-arrays
+```
+
+Expected outputs are available at [example/output-*.txt](example/).
+
+## Running Tests
+
+```bash
+fpm test
+```
+
+Tests cover: core functionality, integer generation, real generation, array generation, state save/restore, statistical properties (mean, variance), autocorrelation, bit balance, avalanche effect, period estimation, and head-to-head benchmarks.
+
+Expected outputs are available at [test/output-*.txt](test/).
+
+## Compilers
+
+Tested with `gfortran`, `ifort`, and `ifx`. To use a specific compiler:
+
+```bash
+fpm test --compiler=ifort
+```
