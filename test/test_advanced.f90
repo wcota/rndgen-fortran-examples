@@ -1,7 +1,8 @@
 program test_advanced
     use iso_fortran_env, only: i4 => int32, i8 => int64, sp => real32, dp => real64
-    use rndgen_mod
-    use rndgen_legacy_mod
+    use rndgen_mod, only : rndgen_base_t, rndgen_xoshiro256_t
+    use rndgen_legacy_mod, only: rndgen_intrinsic_t, rndgen_ran2_t
+    use rndgen_kiss_mod, only : rndgen_kiss_t
     implicit none
 
     class(rndgen_base_t), allocatable :: rng

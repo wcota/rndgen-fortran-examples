@@ -1,6 +1,7 @@
 program example
     use iso_fortran_env, only : i4 => int32, i8 => int64, sp => real32, dp => real64
-    use rndgen_mod, only : rndgen_base_t, rndgen_kiss_t
+    use rndgen_mod, only : rndgen_base_t
+    use rndgen_kiss_mod, only : rndgen_kiss_t
     implicit none
 
     ! Adapted from <https://web.mst.edu/vojtat/class_5403/kiss05/rtest.f90>

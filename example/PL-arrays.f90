@@ -14,7 +14,7 @@ program example
    seed = 294727492
 
    ! Initialize the underlying engine and the power-law parameters
-   call generatorPL%init(iseed = seed)
+   call generatorPL%init(seed)
    call generatorPL%init_powerlaw(3, int(N**(1.0_dp/2.0_dp), kind=i4), 2.1_dp) ! kmin, kmax, gamma
 
    write (*, fmt) "10 random PL numbers:", generatorPL%rndPL_array(10)

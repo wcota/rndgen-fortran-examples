@@ -14,10 +14,14 @@ program example
    ! Usa o tipo estendido de lei de potência
    type(rndgen_pl_t) :: generatorPL
 
+   ! list of file units
+   integer(kind=i4) :: file_unit
+   character(len=1), parameter :: file_number(4) = ["1", "2", "3", "4"]
+
    seed = 294727492
 
    ! 1. Inicializa o motor de bits central
-   call generatorPL%init(iseed = seed, gen_type = "kiss")
+   call generatorPL%init(seed)
 
    ! 2. Inicializa os parâmetros da lei de potência
    call generatorPL%init_powerlaw(3, int(N**(1.0_dp/2.0_dp), kind=i4), 2.1_dp) ! kmin, kmax, gamma
@@ -43,9 +47,11 @@ program example
 
       sumc = real(sum(pok), kind=dp)
 
+      open(newunit=file_unit, file="example/output-PL-histogram_"//file_number(j)//".dat", status="replace", action="write", form="formatted")
       do i = generatorPL%pl_kmin, generatorPL%pl_kmax
-         if (pok(i) > 0) write (j, *) i, 1.0_dp * real(pok(i), kind=dp) / sumc
+         if (pok(i) > 0) write (file_unit, *) i, 1.0_dp * real(pok(i), kind=dp) / sumc
       end do
+      close(file_unit)
    end do
 
 end program
