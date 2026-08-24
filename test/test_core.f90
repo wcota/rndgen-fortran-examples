@@ -1,6 +1,6 @@
 program test_core
     use iso_fortran_env, only: i4 => int32, i8 => int64, sp => real32, dp => real64
-    use julienne_m
+    use julienne_lite_mod
     use rndgen_mod, only : rndgen_base_t, rndgen_xoshiro256_t, rndgen_state_t
     use rndgen_legacy_mod, only: rndgen_intrinsic_t, rndgen_ran2_t
     use rndgen_kiss_mod, only : rndgen_kiss_t

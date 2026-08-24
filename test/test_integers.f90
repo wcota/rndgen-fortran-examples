@@ -1,6 +1,6 @@
 program test_integers
     use iso_fortran_env, only: i4 => int32, i8 => int64
-    use julienne_m
+    use julienne_lite_mod
     use rndgen_mod, only : rndgen_base_t, rndgen_xoshiro256_t
     use rndgen_legacy_mod, only: rndgen_intrinsic_t, rndgen_ran2_t
     use rndgen_kiss_mod, only : rndgen_kiss_t
