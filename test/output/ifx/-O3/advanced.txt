@@ -1,0 +1,185 @@
+[  0%]              julienne_lite.f90
+[  1%]              julienne_lite.f90  done.
+[  1%]                 rndgen_mod.f90
+[  3%]                 rndgen_mod.f90  done.
+[  3%]          rndgen_legacy_mod.f90
+[  5%]          rndgen_legacy_mod.f90  done.
+[  5%]         xoshiro256starstar.f90
+[  7%]         xoshiro256starstar.f90  done.
+[  7%]           rndgen_stats_mod.f90
+[  9%]           rndgen_stats_mod.f90  done.
+[  9%]            rndgen_kiss_mod.f90
+[ 11%]            rndgen_kiss_mod.f90  done.
+[ 11%]                2gen-invert.f90
+[ 13%]                2gen-invert.f90  done.
+[ 13%]                       save.f90
+[ 15%]                       save.f90  done.
+[ 15%]                     simple.f90
+[ 17%]                     simple.f90  done.
+[ 17%]                       2gen.f90
+[ 19%]                       2gen.f90  done.
+[ 19%]                      vojta.f90
+[ 21%]                      vojta.f90  done.
+[ 21%]                     arrays.f90
+[ 23%]                     arrays.f90  done.
+[ 23%]                   integers.f90
+[ 25%]                   integers.f90  done.
+[ 25%]             benchmark_duel.f90
+[ 27%]             benchmark_duel.f90  done.
+[ 27%]                       kiss.f90
+[ 29%]                       kiss.f90  done.
+[ 29%]                 statistics.f90
+[ 31%]                 statistics.f90  done.
+[ 31%]                  avalanche.f90
+[ 33%]                  avalanche.f90  done.
+[ 33%]                     period.f90
+[ 35%]                     period.f90  done.
+[ 35%]                 box_muller.f90
+[ 37%]                 box_muller.f90  done.
+[ 37%]                     arrays.f90
+[ 39%]                     arrays.f90  done.
+[ 39%]                      reals.f90
+[ 41%]                      reals.f90  done.
+[ 41%]                   advanced.f90
+[ 43%]                   advanced.f90  done.
+[ 43%]                       bits.f90
+[ 45%]                       bits.f90  done.
+[ 45%]                       core.f90
+[ 47%]                       core.f90  done.
+[ 47%]            autocorrelation.f90
+[ 49%]            autocorrelation.f90  done.
+[ 49%]      rndgen_stats_powerlaw.f90
+[ 50%]      rndgen_stats_powerlaw.f90  done.
+[ 50%]   librndgen-fortran-examples.a
+[ 52%]   librndgen-fortran-examples.a  done.
+[ 52%]                         PL.f90
+[ 54%]                         PL.f90  done.
+[ 54%]                  PL-arrays.f90
+[ 56%]                  PL-arrays.f90  done.
+[ 56%]                    2gen-invert
+[ 58%]                    2gen-invert  done.
+[ 58%]                           save
+[ 60%]                           save  done.
+[ 60%]                         simple
+[ 62%]                         simple  done.
+[ 62%]                           2gen
+[ 64%]                           2gen  done.
+[ 64%]                             PL
+[ 66%]                             PL  done.
+[ 66%]                          vojta
+[ 68%]                          vojta  done.
+[ 68%]                      PL-arrays
+[ 70%]                      PL-arrays  done.
+[ 70%]                         arrays
+[ 72%]                         arrays  done.
+[ 72%]                       integers
+[ 74%]                       integers  done.
+[ 74%]             xoshiro256starstar
+[ 76%]             xoshiro256starstar  done.
+[ 76%]                 benchmark_duel
+[ 78%]                 benchmark_duel  done.
+[ 78%]                           kiss
+[ 80%]                           kiss  done.
+[ 80%]                     statistics
+[ 82%]                     statistics  done.
+[ 82%]                      avalanche
+[ 84%]                      avalanche  done.
+[ 84%]                         period
+[ 86%]                         period  done.
+[ 86%]                     box_muller
+[ 88%]                     box_muller  done.
+[ 88%]                         arrays
+[ 90%]                         arrays  done.
+[ 90%]                          reals
+[ 92%]                          reals  done.
+[ 92%]                       advanced
+[ 94%]                       advanced  done.
+[ 94%]                           bits
+[ 96%]                           bits  done.
+[ 96%]                           core
+[ 98%]                           core  done.
+[ 98%]                autocorrelation
+[100%]                autocorrelation  done.
+[100%] Project compiled successfully.
+ ==================================================
+   ADVANCED METRICS & BENCHMARK : KISS
+   Samples per test:    200000000
+ ==================================================
+ --- 1. Bounds Verification ---
+ Lowest value generated :   4.656612873077393E-010
+ Highest value generated:   0.999999991152436     
+ Strictly inside [0, 1) : PASSED
+ 
+ --- 2. Shannon Entropy ---
+ Calculated Entropy     :    7.99999914238693       bits
+ Theoretical Maximum    :  8.000000 bits
+ Entropy Quality        : EXCELLENT
+ 
+ --- 3. Performance Benchmark (Seconds) ---
+ Scalar U(0,1) dp       :   0.594723000000000       s
+ Scalar Custom Real dp  :   0.531701000000000       s
+ Scalar Custom Int i4   :   0.498992000000000       s
+ Bulk fill_array (dp)   :   0.462989000000000       s
+ 
+ 
+ ==================================================
+   ADVANCED METRICS & BENCHMARK : Xoshiro256**
+   Samples per test:    200000000
+ ==================================================
+ --- 1. Bounds Verification ---
+ Lowest value generated :   6.885698788927641E-009
+ Highest value generated:   0.999999997744231     
+ Strictly inside [0, 1) : PASSED
+ 
+ --- 2. Shannon Entropy ---
+ Calculated Entropy     :    7.99999904640892       bits
+ Theoretical Maximum    :  8.000000 bits
+ Entropy Quality        : EXCELLENT
+ 
+ --- 3. Performance Benchmark (Seconds) ---
+ Scalar U(0,1) dp       :   0.594161000000000       s
+ Scalar Custom Real dp  :   0.550493000000000       s
+ Scalar Custom Int i4   :   0.445539000000000       s
+ Bulk fill_array (dp)   :   0.435282000000000       s
+ 
+ 
+ ==================================================
+   ADVANCED METRICS & BENCHMARK : Fortran Intrinsic RNG
+   Samples per test:    200000000
+ ==================================================
+ --- 1. Bounds Verification ---
+ Lowest value generated :   4.656613057391760E-010
+ Highest value generated:   0.999999987892804     
+ Strictly inside [0, 1) : PASSED
+ 
+ --- 2. Shannon Entropy ---
+ Calculated Entropy     :    7.99999902631583       bits
+ Theoretical Maximum    :  8.000000 bits
+ Entropy Quality        : EXCELLENT
+ 
+ --- 3. Performance Benchmark (Seconds) ---
+ Scalar U(0,1) dp       :    1.32388300000000       s
+ Scalar Custom Real dp  :    1.41904600000000       s
+ Scalar Custom Int i4   :    1.41936700000000       s
+ Bulk fill_array (dp)   :    1.49530000000000       s
+ 
+ 
+ ==================================================
+   ADVANCED METRICS & BENCHMARK : Numerical Recipes ran2 RNG
+   Samples per test:    200000000
+ ==================================================
+ --- 1. Bounds Verification ---
+ Lowest value generated :   9.313226114783538E-010
+ Highest value generated:   0.999999880000000     
+ Strictly inside [0, 1) : PASSED
+ 
+ --- 2. Shannon Entropy ---
+ Calculated Entropy     :    7.99999908520628       bits
+ Theoretical Maximum    :  8.000000 bits
+ Entropy Quality        : EXCELLENT
+ 
+ --- 3. Performance Benchmark (Seconds) ---
+ Scalar U(0,1) dp       :    1.51725900000000       s
+ Scalar Custom Real dp  :    1.61430000000000       s
+ Scalar Custom Int i4   :    1.66503300000000       s
+ Bulk fill_array (dp)   :    1.64920100000000       s

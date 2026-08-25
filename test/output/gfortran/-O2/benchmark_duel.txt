@@ -1,0 +1,24 @@
+Project is up to date
+ ==================================================
+      PRNG HEAD-TO-HEAD PERFORMANCE DUEL (4 ENGINES)
+      Array Size: 500,000,000 Doubles
+ ==================================================
+ 
+[           KISS] Time elapsed :       1.1389 seconds
+[           KISS] Throughput   : 439030319.42 M numbers/sec
+ 
+[   Xoshiro256**] Time elapsed :       0.6606 seconds
+[   Xoshiro256**] Throughput   : 756893027.45 M numbers/sec
+ 
+[      Intrinsic] Time elapsed :       3.4558 seconds
+[      Intrinsic] Throughput   : 144685156.43 M numbers/sec
+ 
+[           ran2] Time elapsed :       3.4197 seconds
+[           ran2] Throughput   : 146213105.47 M numbers/sec
+ 
+ ==================================================
+ SUMMARY:
+ - Xoshiro256**: State-of-the-art speed & bit purity.
+ - KISS / ran2 : Fast classical 32-bit alternatives.
+ - Intrinsic   : Dependent on compiler implementation.
+ ==================================================

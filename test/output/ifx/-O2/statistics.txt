@@ -1,0 +1,28 @@
+Project is up to date
+ ==================================================
+ --- Testing Statistical Properties : KISS
+ ==================================================
+ Calculated Mean:       0.500364833178267     
+ Calculated Variance:   8.342176009634529E-002
+ [OK] The distribution passed the Mean and Variance tests!
+ 
+ ==================================================
+ --- Testing Statistical Properties : Xoshiro256**
+ ==================================================
+ Calculated Mean:       0.500335935176884     
+ Calculated Variance:   8.319441477998595E-002
+ [OK] The distribution passed the Mean and Variance tests!
+ 
+ ==================================================
+ --- Testing Statistical Properties : Fortran Intrinsic RNG
+ ==================================================
+ Calculated Mean:       0.499663263621477     
+ Calculated Variance:   8.330736029062447E-002
+ [OK] The distribution passed the Mean and Variance tests!
+ 
+ ==================================================
+ --- Testing Statistical Properties : Numerical Recipes ran2 RNG
+ ==================================================
+ Calculated Mean:       0.499508317647382     
+ Calculated Variance:   8.332485255180959E-002
+ [OK] The distribution passed the Mean and Variance tests!

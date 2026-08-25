@@ -1,0 +1,40 @@
+Project is up to date
+ ==================================================
+ --- Testing Lag-1 Autocorrelation : KISS
+ --- Sample size:    200000000
+ ==================================================
+ Calculated Mean          :   0.499989569676618     
+ Calculated Variance      :   8.332451856855737E-002
+ Lag-1 Autocorrelation    :  -1.273056795965387E-005
+ Expected Value (Ideal)   :   0.000000
+ [OK] Sequence passes the independence test (no autocorrelation)!
+ 
+ ==================================================
+ --- Testing Lag-1 Autocorrelation : Xoshiro256**
+ --- Sample size:    200000000
+ ==================================================
+ Calculated Mean          :   0.499985346266360     
+ Calculated Variance      :   8.333766401053903E-002
+ Lag-1 Autocorrelation    :   1.741521713691768E-005
+ Expected Value (Ideal)   :   0.000000
+ [OK] Sequence passes the independence test (no autocorrelation)!
+ 
+ ==================================================
+ --- Testing Lag-1 Autocorrelation : Fortran Intrinsic RNG
+ --- Sample size:    200000000
+ ==================================================
+ Calculated Mean          :   0.499962177937901     
+ Calculated Variance      :   8.332805128782042E-002
+ Lag-1 Autocorrelation    :  -8.996274944928692E-005
+ Expected Value (Ideal)   :   0.000000
+ [OK] Sequence passes the independence test (no autocorrelation)!
+ 
+ ==================================================
+ --- Testing Lag-1 Autocorrelation : Numerical Recipes ran2 RNG
+ --- Sample size:    200000000
+ ==================================================
+ Calculated Mean          :   0.499999666067939     
+ Calculated Variance      :   8.332386076570633E-002
+ Lag-1 Autocorrelation    :   1.573341086851881E-005
+ Expected Value (Ideal)   :   0.000000
+ [OK] Sequence passes the independence test (no autocorrelation)!

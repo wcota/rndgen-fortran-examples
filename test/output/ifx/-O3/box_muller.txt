@@ -1,0 +1,36 @@
+Project is up to date
+ ==================================================
+ --- Testing Gaussian N(0,1) Box-Muller : KISS
+ ==================================================
+ Calculated Gaussian Mean     :  -9.096172864620935E-005
+ Expected Mean                :   0.000000
+ Calculated Gaussian Variance :    1.00008430250293     
+ Expected Variance            :   1.000000
+ [OK] Gaussian distribution successfully verified (Mean=0, Variance=1)!
+ 
+ ==================================================
+ --- Testing Gaussian N(0,1) Box-Muller : Xoshiro256**
+ ==================================================
+ Calculated Gaussian Mean     :  -4.398048291311975E-005
+ Expected Mean                :   0.000000
+ Calculated Gaussian Variance :   0.999984371700513     
+ Expected Variance            :   1.000000
+ [OK] Gaussian distribution successfully verified (Mean=0, Variance=1)!
+ 
+ ==================================================
+ --- Testing Gaussian N(0,1) Box-Muller : Fortran Intrinsic RNG
+ ==================================================
+ Calculated Gaussian Mean     :  -6.564933054791737E-005
+ Expected Mean                :   0.000000
+ Calculated Gaussian Variance :   0.999935559359137     
+ Expected Variance            :   1.000000
+ [OK] Gaussian distribution successfully verified (Mean=0, Variance=1)!
+ 
+ ==================================================
+ --- Testing Gaussian N(0,1) Box-Muller : Numerical Recipes ran2 RNG
+ ==================================================
+ Calculated Gaussian Mean     :  -3.850722616247965E-005
+ Expected Mean                :   0.000000
+ Calculated Gaussian Variance :   0.999798183162379     
+ Expected Variance            :   1.000000
+ [OK] Gaussian distribution successfully verified (Mean=0, Variance=1)!

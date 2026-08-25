@@ -1,0 +1,11 @@
+Project is up to date
+ ==================================================
+ --- Sanity Check: Compiler Optimization vs Xoshiro
+ ==================================================
+ Testing RNG1 (Seed 12345)...
+ [OK] RNG1 generated correct sequence.
+ Testing RNG2 (Seed 12346)...
+ [OK] RNG2 generated correct sequence.
+ ==================================================
+ SUCCESS: State isolation and bitwise math passed!
+ ==================================================
