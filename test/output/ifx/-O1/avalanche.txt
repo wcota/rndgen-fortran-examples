@@ -25,11 +25,3 @@
  [OK] Perfect avalanche effect! Changing 1 bit in seed completely alters the out
  put sequence.
  
- ==================================================
- --- Testing Seed Avalanche Effect : Numerical Recipes ran2 RNG
- ==================================================
- Total samples compared           :     10000000
- Sequences elements differing     :     10000000
- Max absolute difference found    :   0.999834788956659     
- [OK] Perfect avalanche effect! Changing 1 bit in seed completely alters the out
- put sequence.

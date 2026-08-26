@@ -25,11 +25,3 @@
  Expected Variance            :   1.000000
  [OK] Gaussian distribution successfully verified (Mean=0, Variance=1)!
  
- ==================================================
- --- Testing Gaussian N(0,1) Box-Muller : Numerical Recipes ran2 RNG
- ==================================================
- Calculated Gaussian Mean     :  -3.850722616246692E-005
- Expected Mean                :   0.000000
- Calculated Gaussian Variance :   0.999798183163087     
- Expected Variance            :   1.000000
- [OK] Gaussian distribution successfully verified (Mean=0, Variance=1)!

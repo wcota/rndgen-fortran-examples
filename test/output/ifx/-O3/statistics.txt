@@ -19,9 +19,3 @@
  Calculated Variance:   8.330736029062447E-002
  [OK] The distribution passed the Mean and Variance tests!
  
- ==================================================
- --- Testing Statistical Properties : Numerical Recipes ran2 RNG
- ==================================================
- Calculated Mean:       0.499508317647382     
- Calculated Variance:   8.332485255180959E-002
- [OK] The distribution passed the Mean and Variance tests!

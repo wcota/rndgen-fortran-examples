@@ -28,12 +28,3 @@
  Expected Value (Ideal)   :   0.000000
  [OK] Sequence passes the independence test (no autocorrelation)!
  
- ==================================================
- --- Testing Lag-1 Autocorrelation : Numerical Recipes ran2 RNG
- --- Sample size:    200000000
- ==================================================
- Calculated Mean          :   0.499999666067830     
- Calculated Variance      :   8.332386076570610E-002
- Lag-1 Autocorrelation    :   1.573341086848863E-005
- Expected Value (Ideal)   :   0.000000
- [OK] Sequence passes the independence test (no autocorrelation)!

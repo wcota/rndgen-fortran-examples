@@ -21,7 +21,3 @@
  ==================================================
  [SKIP] get_state/set_state not implemented.
  
- ==================================================
- --- Testing Short-Range Cycle Collision : Numerical Recipes ran2 RNG
- ==================================================
- [SKIP] get_state/set_state not implemented.
