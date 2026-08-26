@@ -38,8 +38,19 @@ for compiler in "${COMPILERS[@]}"; do
             if [ $? -eq 0 ]; then
                 echo -e "[\033[32mOK\033[0m]"
 
-                # clear the output file to remove the fpm compilation success message
-                sed -i '1,/\[100%\] Project compiled successfully/d' "$output_file"
+                awk '
+                    /\[100%\] Project compiled successfully|Project is up to date/ {
+                        line = NR
+                    }
+                    {
+                        lines[NR] = $0
+                    }
+                    END {
+                        for (i = line + 1; i <= NR; i++)
+                            print lines[i]
+                    }
+                ' "$output_file" > "$output_file.tmp" &&
+                mv "$output_file.tmp" "$output_file"
             else
                 echo -e "[\033[31mFAILED\033[0m] (see $output_file)"
             fi
