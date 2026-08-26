@@ -1,20 +1,19 @@
-Project is up to date
  ==================================================
       PRNG HEAD-TO-HEAD PERFORMANCE DUEL (4 ENGINES)
       Array Size: 500,000,000 Doubles
  ==================================================
  
-[           KISS] Time elapsed :       1.1389 seconds
-[           KISS] Throughput   : 439030319.42 M numbers/sec
+[           KISS] Time elapsed :       1.1332 seconds
+[           KISS] Throughput   : 441213271.02 M numbers/sec
  
-[   Xoshiro256**] Time elapsed :       0.6606 seconds
-[   Xoshiro256**] Throughput   : 756893027.45 M numbers/sec
+[   Xoshiro256**] Time elapsed :       0.6615 seconds
+[   Xoshiro256**] Throughput   : 755857422.23 M numbers/sec
  
-[      Intrinsic] Time elapsed :       3.4558 seconds
-[      Intrinsic] Throughput   : 144685156.43 M numbers/sec
+[      Intrinsic] Time elapsed :       3.4639 seconds
+[      Intrinsic] Throughput   : 144345214.50 M numbers/sec
  
-[           ran2] Time elapsed :       3.4197 seconds
-[           ran2] Throughput   : 146213105.47 M numbers/sec
+[           ran2] Time elapsed :       3.4204 seconds
+[           ran2] Throughput   : 146183639.54 M numbers/sec
  
  ==================================================
  SUMMARY:

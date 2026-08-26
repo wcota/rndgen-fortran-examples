@@ -1,4 +1,3 @@
-Project is up to date
  ==================================================
    ADVANCED METRICS & BENCHMARK : KISS
    Samples per test:    200000000
@@ -14,10 +13,10 @@ Project is up to date
  Entropy Quality        : EXCELLENT
  
  --- 3. Performance Benchmark (Seconds) ---
- Scalar U(0,1) dp       :   0.34521995100000002       s
- Scalar Custom Real dp  :   0.44311963700000001       s
- Scalar Custom Int i4   :   0.50371780899999996       s
- Bulk fill_array (dp)   :   0.44257681300000001       s
+ Scalar U(0,1) dp       :   0.34528083300000001       s
+ Scalar Custom Real dp  :   0.44735939899999999       s
+ Scalar Custom Int i4   :   0.50443342999999996       s
+ Bulk fill_array (dp)   :   0.45091366599999999       s
  
  
  ==================================================
@@ -35,10 +34,10 @@ Project is up to date
  Entropy Quality        : EXCELLENT
  
  --- 3. Performance Benchmark (Seconds) ---
- Scalar U(0,1) dp       :   0.30074446100000002       s
- Scalar Custom Real dp  :   0.37930354199999999       s
- Scalar Custom Int i4   :   0.41552696500000003       s
- Bulk fill_array (dp)   :   0.36090548600000000       s
+ Scalar U(0,1) dp       :   0.29931538899999999       s
+ Scalar Custom Real dp  :   0.38036307899999999       s
+ Scalar Custom Int i4   :   0.41518751300000001       s
+ Bulk fill_array (dp)   :   0.37047441900000000       s
  
  
  ==================================================
@@ -56,10 +55,10 @@ Project is up to date
  Entropy Quality        : EXCELLENT
  
  --- 3. Performance Benchmark (Seconds) ---
- Scalar U(0,1) dp       :    1.3467794030000000       s
- Scalar Custom Real dp  :    1.4752067200000001       s
- Scalar Custom Int i4   :    1.4869952870000001       s
- Bulk fill_array (dp)   :    1.4849840919999999       s
+ Scalar U(0,1) dp       :    1.3476445779999999       s
+ Scalar Custom Real dp  :    1.4757406829999999       s
+ Scalar Custom Int i4   :    1.4907757210000001       s
+ Bulk fill_array (dp)   :    1.4807252650000000       s
  
  
  ==================================================
@@ -77,7 +76,7 @@ Project is up to date
  Entropy Quality        : EXCELLENT
  
  --- 3. Performance Benchmark (Seconds) ---
- Scalar U(0,1) dp       :    1.3354899119999999       s
- Scalar Custom Real dp  :    1.4606124869999999       s
- Scalar Custom Int i4   :    1.5327137310000001       s
- Bulk fill_array (dp)   :    1.4724691569999999       s
+ Scalar U(0,1) dp       :    1.3389865379999999       s
+ Scalar Custom Real dp  :    1.4628337910000000       s
+ Scalar Custom Int i4   :    1.5288149209999999       s
+ Bulk fill_array (dp)   :    1.4711363420000001       s

@@ -1,4 +1,3 @@
-Project is up to date
  ==================================================
  --- Sanity Check: Compiler Optimization vs Xoshiro
  ==================================================

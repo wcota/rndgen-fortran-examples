@@ -1,4 +1,3 @@
-Project is up to date
  ==================================================
  --- Testing Lag-1 Autocorrelation : KISS
  --- Sample size:    200000000

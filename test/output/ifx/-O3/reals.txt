@@ -1,4 +1,3 @@
-Project is up to date
  ==================================================
  --- Testing Real Distributions [r1, r2) and Boolean : KISS
  ==================================================
