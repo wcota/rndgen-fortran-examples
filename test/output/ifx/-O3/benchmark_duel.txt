@@ -3,14 +3,17 @@
       Array Size: 500,000,000 Doubles
  ==================================================
  
-[           KISS] Time elapsed :       2.7646 seconds
-[           KISS] Throughput   : 180861130.48 M numbers/sec
+[           KISS] Time elapsed :       2.7604 seconds
+[           KISS] Throughput   : 181134284.63 M numbers/sec
  
-[   Xoshiro256**] Time elapsed :       1.8000 seconds
-[   Xoshiro256**] Throughput   : 277774845.71 M numbers/sec
+[   Xoshiro256**] Time elapsed :       1.8712 seconds
+[   Xoshiro256**] Throughput   : 267206352.24 M numbers/sec
  
-[      Intrinsic] Time elapsed :       6.5839 seconds
-[      Intrinsic] Throughput   :  75942795.63 M numbers/sec
+[      Intrinsic] Time elapsed :       6.4163 seconds
+[      Intrinsic] Throughput   :  77926227.24 M numbers/sec
+ 
+[           ran2] Time elapsed :       7.5204 seconds
+[           ran2] Throughput   :  66485551.16 M numbers/sec
  
  ==================================================
  SUMMARY:

@@ -1,63 +1,82 @@
  ==================================================
    ADVANCED METRICS & BENCHMARK : KISS
-   Samples per test:    200000000
+   Samples per test:     20000000
  ==================================================
  --- 1. Bounds Verification ---
- Lowest value generated :    4.6566128730773926E-010
+ Lowest value generated :    3.7252902984619141E-008
  Highest value generated:   0.99999999115243554     
  Strictly inside [0, 1) : PASSED
  
  --- 2. Shannon Entropy ---
- Calculated Entropy     :    7.9999991423869270       bits
+ Calculated Entropy     :    7.9999900607501715       bits
  Theoretical Maximum    :  8.000000 bits
  Entropy Quality        : EXCELLENT
  
  --- 3. Performance Benchmark (Seconds) ---
- Scalar U(0,1) dp       :   0.98638447399999996       s
- Scalar Custom Real dp  :    1.2834404509999999       s
- Scalar Custom Int i4   :    1.5222200260000001       s
- Bulk fill_array (dp)   :    1.1098478210000000       s
+ Scalar U(0,1) dp       :    9.0694222000000005E-002  s
+ Scalar Custom Real dp  :   0.12941791000000000       s
+ Scalar Custom Int i4   :   0.14948120200000001       s
+ Bulk fill_array (dp)   :   0.11676775100000000       s
  
  
  ==================================================
    ADVANCED METRICS & BENCHMARK : Xoshiro256**
-   Samples per test:    200000000
+   Samples per test:     20000000
  ==================================================
  --- 1. Bounds Verification ---
- Lowest value generated :    6.8856987889276411E-009
- Highest value generated:   0.99999999774423098     
+ Lowest value generated :    2.7958787840454136E-008
+ Highest value generated:   0.99999996938689706     
  Strictly inside [0, 1) : PASSED
  
  --- 2. Shannon Entropy ---
- Calculated Entropy     :    7.9999990464089166       bits
+ Calculated Entropy     :    7.9999908684783057       bits
  Theoretical Maximum    :  8.000000 bits
  Entropy Quality        : EXCELLENT
  
  --- 3. Performance Benchmark (Seconds) ---
- Scalar U(0,1) dp       :   0.72248048899999995       s
- Scalar Custom Real dp  :   0.99971407300000004       s
- Scalar Custom Int i4   :    1.2188943090000000       s
- Bulk fill_array (dp)   :   0.82368761899999998       s
+ Scalar U(0,1) dp       :    7.7672288000000006E-002  s
+ Scalar Custom Real dp  :    9.7073382000000000E-002  s
+ Scalar Custom Int i4   :   0.13369624699999999       s
+ Bulk fill_array (dp)   :    8.4405037000000002E-002  s
  
  
  ==================================================
    ADVANCED METRICS & BENCHMARK : Fortran Intrinsic RNG
-   Samples per test:    200000000
+   Samples per test:     20000000
  ==================================================
  --- 1. Bounds Verification ---
  Lowest value generated :    9.2657084227454334E-009
- Highest value generated:   0.99999999876029066     
+ Highest value generated:   0.99999999151841468     
  Strictly inside [0, 1) : PASSED
  
  --- 2. Shannon Entropy ---
- Calculated Entropy     :    7.9999991367669576       bits
+ Calculated Entropy     :    7.9999909944792078       bits
  Theoretical Maximum    :  8.000000 bits
  Entropy Quality        : EXCELLENT
  
  --- 3. Performance Benchmark (Seconds) ---
- Scalar U(0,1) dp       :    2.5511760250000002       s
- Scalar Custom Real dp  :    2.8329515870000002       s
- Scalar Custom Int i4   :    3.0265834479999998       s
- Bulk fill_array (dp)   :    2.6932272689999999       s
+ Scalar U(0,1) dp       :   0.24851727000000001       s
+ Scalar Custom Real dp  :   0.28051697199999998       s
+ Scalar Custom Int i4   :   0.29224704299999998       s
+ Bulk fill_array (dp)   :   0.28002477199999998       s
  
  
+ ==================================================
+   ADVANCED METRICS & BENCHMARK : Numerical Recipes ran2 RNG
+   Samples per test:     20000000
+ ==================================================
+ --- 1. Bounds Verification ---
+ Lowest value generated :    9.3132261147835383E-010
+ Highest value generated:   0.99999987999999995     
+ Strictly inside [0, 1) : PASSED
+ 
+ --- 2. Shannon Entropy ---
+ Calculated Entropy     :    7.9999915779816870       bits
+ Theoretical Maximum    :  8.000000 bits
+ Entropy Quality        : EXCELLENT
+ 
+ --- 3. Performance Benchmark (Seconds) ---
+ Scalar U(0,1) dp       :   0.26094473299999998       s
+ Scalar Custom Real dp  :   0.27451014600000001       s
+ Scalar Custom Int i4   :   0.30681493599999998       s
+ Bulk fill_array (dp)   :   0.29256686900000001       s

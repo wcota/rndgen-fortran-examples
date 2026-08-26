@@ -23,3 +23,10 @@
  [WARNING] Fail: Bit bias detected in Fortran Intrinsic RNG!
  
  
+ ==================================================
+ --- Testing Raw Bit Balance (Monobit) : Numerical Recipes ran2 RNG
+ ==================================================
+ Native bits evaluated  :           64
+ Total bits evaluated   :                6400000
+ Ratio of 1s (Ideal ~0.5):   0.421877656250000     
+ [WARNING] Fail: Bit bias detected in Numerical Recipes ran2 RNG!

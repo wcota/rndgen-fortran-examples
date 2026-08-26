@@ -16,3 +16,8 @@
  [OK] int_i4 perfectly respects bounds.
  [OK] int_i8 perfectly respects bounds.
  
+ ==================================================
+ --- Testing Integer Distributions [i1, i2] : Numerical Recipes ran2 RNG
+ ==================================================
+ [OK] int_i4 perfectly respects bounds.
+ [OK] int_i8 perfectly respects bounds.
