@@ -68,19 +68,45 @@ Tests were run generating 500,000,000 double-precision values (array fill), comp
 
 | Property | Value |
 |---|---|
-| CPU | 12th Gen Intel Core i7-1260P |
-| OS | Arch Linux (x86\_64) |
-| Compiler | GNU Fortran (GCC) 16.2.1 (2026-08-10) |
+| CPU model | Intel(R) Core(TM) i7-14700 |
+| Pinned logical CPU | 16 |
+| CPU type | E-core (single-threaded core in this topology) |
+| CPU frequency (CPU 16) | min 800.0000 MHz, max 4200.0000 MHz |
+| CPU affinity | `taskset -c 16` |
 
 
 ### Performance (500 M doubles)
 
 | Generator | Time (s) | Throughput (M/s) |
 |---|---|---|
-| **xoshiro256\*\*** | **5.56** | **~90 M** |
-| Fortran Intrinsic | 6.45 | ~78 M |
-| KISS | 8.04 | ~62 M |
-| ran2 | 10.36 | ~48 M |
+| **xoshiro256\*\*** | **1.63** | **~307 M** |
+| Fortran Intrinsic | 6.53 | ~76.5 M |
+| KISS | 2.27 | ~219.8 M |
+| ran2 | 6.97 | ~71.8 M |
+
+Reference: `test/output/gfortran/-O3/benchmark_duel.txt`.
+
+### Compiler and Optimization Comparison
+
+The benchmark artifacts in `test/output/{gfortran,ifx}/-O{0,1,2,3}/benchmark_duel.txt` allow direct comparison of optimization level and compiler choice.
+
+| Compiler | Opt | xoshiro256\*\* (s) | KISS (s) | Intrinsic (s) | ran2 (s) |
+|---|---|---:|---:|---:|---:|
+| gfortran | -O0 | 5.8292 | 7.8227 | 7.3918 | 10.7509 |
+| gfortran | -O1 | 1.9456 | 2.7632 | 6.6771 | 7.3670 |
+| gfortran | -O2 | 1.6235 | 2.9214 | 6.5278 | 7.2672 |
+| gfortran | -O3 | 1.6260 | 2.2748 | 6.5325 | 6.9686 |
+| ifx | -O0 | 5.2652 | 5.7013 | 7.5891 | 14.3881 |
+| ifx | -O1 | 1.8683 | 2.7610 | 6.4842 | 7.4048 |
+| ifx | -O2 | 1.8745 | 2.7660 | 6.5711 | 7.3734 |
+| ifx | -O3 | 1.8712 | 2.7604 | 6.4163 | 7.5204 |
+
+Quick reading:
+
+- `-O1` already delivers most of the speedup for both compilers.
+- Best xoshiro256\*\* result in this dataset is `gfortran -O2` (1.6235 s), statistically tied with `gfortran -O3` (1.6260 s).
+- `ifx -O1` is the fastest ifx configuration for xoshiro256\*\* (1.8683 s), very close to `-O3` (1.8712 s).
+- Functionality is stable across all tested optimization levels (`-O0` to `-O3`) for both `gfortran` and `ifx` in the provided test output set.
 
 ### Statistical Quality
 
