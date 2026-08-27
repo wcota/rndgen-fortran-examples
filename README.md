@@ -160,6 +160,23 @@ fpm run --example PL-arrays
 
 Expected outputs are available at [example/output-*.txt](example/).
 
+### Parallel Example
+
+The OpenMP parallel example requires passing `--flag="-fopenmp"` so that the runtime and compiler enable OpenMP support:
+
+```bash
+fpm run --example parallel --flag="-fopenmp"
+```
+
+To compare compilers and optimization levels in a controlled way, you can pin execution to a CPU range and vary the compiler/optimization flags:
+
+```bash
+taskset -c 16-27 fpm run --example parallel --compiler=gfortran --flag="-fopenmp -O2"
+taskset -c 16-27 fpm run --example parallel --compiler=ifx --flag="-fopenmp -O2"
+```
+
+The example uses 12 OpenMP threads in this run set and jumps the xoshiro state per thread, so the result is thread-safe and reproducible for the chosen seed.
+
 ## Running Tests
 
 ```bash
@@ -169,6 +186,27 @@ fpm test
 Tests cover: core functionality, integer generation, real generation, array generation, state save/restore, statistical properties (mean, variance), autocorrelation, bit balance, avalanche effect, period estimation, and head-to-head benchmarks.
 
 Expected outputs are available at [test/output-*.txt](test/).
+
+### Parallel Benchmark Summary
+
+The parallel Monte Carlo Pi example was benchmarked on CPUs 16-27 with 12 threads. Lower wall time is better; CPU time shows total work consumed across all threads.
+
+| Compiler | Opt | Wall Time (s) | CPU Time (s) |
+|---|---|---:|---:|
+| gfortran | -O0 | 1.3782 | 11.9053 |
+| gfortran | -O1 | 0.4583 | 3.8012 |
+| gfortran | -O2 | 0.3687 | 2.4404 |
+| gfortran | -O3 | 0.4178 | 3.3189 |
+| ifx | -O0 | 1.7515 | 15.7293 |
+| ifx | -O1 | 0.8522 | 7.8766 |
+| ifx | -O2 | 1.8997 | 15.9266 |
+| ifx | -O3 | 0.8765 | 7.8759 |
+
+Quick reading:
+
+- Best wall time in this run set is `gfortran -O2` at 0.3687 s.
+- `gfortran` is consistently faster than `ifx` for this parallel example on the selected CPU range.
+- `-O2` is the best overall setting here for `gfortran`; for `ifx`, `-O1` and `-O3` are close, with `-O1` slightly ahead on wall time.
 
 ## Compilers
 
