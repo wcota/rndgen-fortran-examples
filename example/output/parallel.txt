@@ -1,0 +1,10 @@
+ ==================================================
+ Starting Monte Carlo Pi with          28 threads
+ ==================================================
+ [OK] PRNG states successfully jumped and distributed.
+ Total Samples    :             100000000
+ Pi Estimate      :    3.1417742000000000     
+ Relative Error   :    1.8154641020684537E-004
+ Wall Time (s)    :   0.19835555700410623     
+ CPU Time (s)     :    2.6278020000000000     
+ ==================================================
