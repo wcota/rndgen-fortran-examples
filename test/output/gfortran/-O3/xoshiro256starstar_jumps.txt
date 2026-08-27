@@ -1,0 +1,10 @@
+ ==================================================
+ --- Sanity Check: Xoshiro256** Jumps
+ ==================================================
+ Testing JUMP (Seed 12345)...
+ [OK] JUMP generated correct sequence.
+ Testing LONG_JUMP (Seed 12345)...
+ [OK] LONG_JUMP generated correct sequence.
+ ==================================================
+ SUCCESS: Jump and Long Jump states verified!
+ ==================================================
