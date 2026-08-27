@@ -11,4 +11,4 @@ implicit-external = false
 source-form = "free"
 
 [dev-dependencies]
-rndgen-fortran = {git="https://github.com/wcota/rndgen-fortran", tag="a012b6833dd45478d3b7d6c3e39bff9a9a153377"}
+rndgen-fortran = {git="https://github.com/wcota/rndgen-fortran", tag="001c16af2b7e9be45c7018987dc49c4fa4df5ec2"}
